@@ -1,0 +1,35 @@
+.expense-income {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+
+  box-shadow: -2px 3px 3px 0px rgba(168, 168, 168, 0.75);
+  -webkit-box-shadow: -2px 3px 3px 0px rgba(168, 168, 168, 0.75);
+  -moz-box-shadow: -2px 3px 3px 0px rgba(168, 168, 168, 0.75);
+
+  border-radius: 4px;
+}
+
+.balance > h3, h1 {
+  /* font-size: 40px; */
+}
+
+.income {
+  flex: 1;
+  text-align: center;
+}
+
+.income > h5 {
+  color: green;
+  font-size: 20px;
+}
+
+.expense {
+  flex: 1;
+  text-align: center;
+}
+
+.expense > h5 {
+  color: red;
+  font-size: 20px;
+}

@@ -1,0 +1,40 @@
+.history > ul {
+  list-style: none;
+  /* margin-right: 3%; */
+  align-items: center;
+  justify-content: center;
+}
+
+.transactions {
+  max-height: 110px;
+  overflow-y: auto;
+}
+
+.scrollable {
+  overflow-y: scroll !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  margin-left: 4%;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  margin-left: 4%;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  margin-left: 4%;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

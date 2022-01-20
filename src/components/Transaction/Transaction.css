@@ -1,0 +1,28 @@
+.transaction {
+  width: 100%;
+
+  box-shadow: -2px 3px 3px 0px rgba(168, 168, 168, 0.75);
+  -webkit-box-shadow: -2px 3px 3px 0px rgba(168, 168, 168, 0.75);
+  -moz-box-shadow: -2px 3px 3px 0px rgba(168, 168, 168, 0.75);
+
+  border-radius: 2px;
+}
+
+.green {
+  border-right: 4px solid green;
+}
+
+.red {
+  border-right: 4px solid red;
+}
+
+.transaction > li {
+  background-color: white;
+  padding: 2%;
+  /* margin-left: -7%; */
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 3%;
+}
