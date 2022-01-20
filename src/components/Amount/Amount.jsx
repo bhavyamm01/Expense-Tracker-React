@@ -10,13 +10,25 @@ const Amount = () => {
   let income = 0;
   let expense = 0;
 
-  for (let i = 0; i < transactions.length; i++) {
-    total += parseInt(transactions[i].amount);
+  // let transactions = JSON.parse(window.localStorage.getItem("transactions"));
 
-    if (parseInt(transactions[i].amount) > 0) {
-      income += parseInt(transactions[i].amount);
+  // useEffect(() => {
+  //   transactions = JSON.parse(window.localStorage.getItem("transactions"));
+  // }, [transactions]);
+
+  // console.log(
+  //   transactions,
+  //   JSON.parse(window.localStorage.getItem("transactions")),
+  //   "transactions"
+  // );
+
+  for (let i = 0; i < transactions?.length; i++) {
+    total += parseInt(transactions[i]?.amount);
+
+    if (parseInt(transactions[i]?.amount) > 0) {
+      income += parseInt(transactions[i]?.amount);
     } else {
-      expense += parseInt(transactions[i].amount);
+      expense += parseInt(transactions[i]?.amount);
     }
   }
   console.log(total, "total");

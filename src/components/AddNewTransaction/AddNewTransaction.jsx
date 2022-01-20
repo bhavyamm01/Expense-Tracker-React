@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./AddNewTransaction.css";
 import { GlobalContext } from "../../GlobalContext";
+import { useEffect } from "react/cjs/react.development";
 
 const AddNewTransaction = () => {
   const [comment, setComment] = useState("");
@@ -10,6 +11,11 @@ const AddNewTransaction = () => {
   const addTransaction = add;
   const [transactions, setTransactions] = trans;
 
+  const newTransaction = {
+    comment: comment,
+    amount: amount,
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -18,13 +24,10 @@ const AddNewTransaction = () => {
       amount,
     });
 
-    window.localStorage.setItem("transactions", [
-      ...transactions,
-      {
-        comment,
-        amount,
-      },
-    ]);
+    // window.localStorage.setItem(
+    //   "transactions",
+    //   JSON.stringify([...transactions, newTransaction])
+    // );
 
     setComment("");
     setAmount(0);

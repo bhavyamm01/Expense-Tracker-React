@@ -6,10 +6,12 @@ import Transaction from "../Transaction/Transaction";
 const History = () => {
   const { trans } = useContext(GlobalContext);
   const [transactions, setTransactions] = trans;
-  // let transactions = window.localStorage.getItem("transactions");
+
+  // let transactions = JSON.parse(window.localStorage.getItem("transactions"));
   // useEffect(() => {
-  //   transactions = window.localStorage.getItem("transactions");
+  //   transactions = JSON.parse(window.localStorage.getItem("transactions"));
   // }, [transactions]);
+
   // console.log(transactions, "transactions");
 
   // console.log(document.getElementById("history").offsetHeight, "ul");
