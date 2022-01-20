@@ -10,18 +10,6 @@ const Amount = () => {
   let income = 0;
   let expense = 0;
 
-  // let transactions = JSON.parse(window.localStorage.getItem("transactions"));
-
-  // useEffect(() => {
-  //   transactions = JSON.parse(window.localStorage.getItem("transactions"));
-  // }, [transactions]);
-
-  // console.log(
-  //   transactions,
-  //   JSON.parse(window.localStorage.getItem("transactions")),
-  //   "transactions"
-  // );
-
   for (let i = 0; i < transactions?.length; i++) {
     total += parseInt(transactions[i]?.amount);
 

@@ -8,21 +8,17 @@ export const GlobalProvider = ({ children }) => {
   );
 
   const addTransaction = (transaction) => {
+    window.localStorage.setItem(
+      "transactions",
+      JSON.stringify([transaction, ...transactions])
+    );
+
     setTransactions([transaction, ...transactions]);
-
-    // window.localStorage.setItem("transactions", [transaction, ...transactions]);
-
-    // window.localStorage.setItem(
-    //   "transactions",
-    //   JSON.stringify([...transactions, transaction])
-    // );
-
-    // setTransactions(JSON.parse(window.localStorage.getItem("transactions")));
   };
 
-  useEffect(() => {
-    window.localStorage.setItem("transactions", JSON.stringify(transactions));
-  }, [transactions]);
+  // useEffect(() => {
+  //   window.localStorage.setItem("transactions", JSON.stringify(transactions));
+  // }, [transactions]);
 
   return (
     <GlobalContext.Provider

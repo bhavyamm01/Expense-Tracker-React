@@ -1,6 +1,5 @@
 .history > ul {
   list-style: none;
-  /* margin-right: 3%; */
   align-items: center;
   justify-content: center;
 }
@@ -18,7 +17,6 @@
 ::-webkit-scrollbar {
   width: 10px;
   margin-left: 4%;
-
 }
 
 /* Track */
@@ -31,7 +29,6 @@
 ::-webkit-scrollbar-thumb {
   background: #888;
   margin-left: 4%;
-
 }
 
 /* Handle on hover */

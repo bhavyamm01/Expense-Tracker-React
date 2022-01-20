@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./AddNewTransaction.css";
 import { GlobalContext } from "../../GlobalContext";
 import { useEffect } from "react/cjs/react.development";
+import Swal from "sweetalert2";
 
 const AddNewTransaction = () => {
   const [comment, setComment] = useState("");
@@ -9,38 +10,24 @@ const AddNewTransaction = () => {
 
   const { add, trans } = useContext(GlobalContext);
   const addTransaction = add;
-  const [transactions, setTransactions] = trans;
-
-  const newTransaction = {
-    comment: comment,
-    amount: amount,
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (comment === "") {
+      Swal.fire("Error", "Comment cannot be empty!", "error");
+      setAmount(0);
+      return;
+    }
 
     addTransaction({
       comment,
       amount,
     });
 
-    // window.localStorage.setItem(
-    //   "transactions",
-    //   JSON.stringify([...transactions, newTransaction])
-    // );
-
     setComment("");
     setAmount(0);
   };
-
-  //   console.log(comment, "comment", amount, "amount");
-
-  //   const { comment, amount } = state;
-
-  //   const handleChange = (e) => {
-  //     setComment(e.target.value);
-  //     setAmount(e.target.value);
-  //   };
 
   return (
     <div className="add_new_transaction">

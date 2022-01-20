@@ -7,15 +7,6 @@ const History = () => {
   const { trans } = useContext(GlobalContext);
   const [transactions, setTransactions] = trans;
 
-  // let transactions = JSON.parse(window.localStorage.getItem("transactions"));
-  // useEffect(() => {
-  //   transactions = JSON.parse(window.localStorage.getItem("transactions"));
-  // }, [transactions]);
-
-  // console.log(transactions, "transactions");
-
-  // console.log(document.getElementById("history").offsetHeight, "ul");
-
   return (
     <div className="history" id="history">
       <h3>History</h3>

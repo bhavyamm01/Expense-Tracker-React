@@ -10,10 +10,6 @@
   border-radius: 4px;
 }
 
-.balance > h3, h1 {
-  /* font-size: 40px; */
-}
-
 .income {
   flex: 1;
   text-align: center;
