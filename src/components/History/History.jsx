@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "./History.css";
 import { GlobalContext } from "../../GlobalContext";
 import Transaction from "../Transaction/Transaction";
 
 const History = () => {
   const { trans } = useContext(GlobalContext);
-  const [transactions, setTransactions] = trans;
+  const [transactions] = trans;
 
   return (
     <div className="history" id="history">

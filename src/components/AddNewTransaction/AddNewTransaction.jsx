@@ -1,14 +1,13 @@
 import React, { useContext, useState } from "react";
 import "./AddNewTransaction.css";
 import { GlobalContext } from "../../GlobalContext";
-import { useEffect } from "react/cjs/react.development";
 import Swal from "sweetalert2";
 
 const AddNewTransaction = () => {
   const [comment, setComment] = useState("");
   const [amount, setAmount] = useState(0);
 
-  const { add, trans } = useContext(GlobalContext);
+  const { add } = useContext(GlobalContext);
   const addTransaction = add;
 
   const handleSubmit = (e) => {

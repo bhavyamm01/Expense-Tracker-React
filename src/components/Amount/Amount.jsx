@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { GlobalContext } from "../../GlobalContext";
 import "./Amount.css";
 
 const Amount = () => {
   const { trans } = useContext(GlobalContext);
-  const [transactions, setTransactions] = trans;
+  const [transactions] = trans;
 
   let total = 0;
   let income = 0;
@@ -19,8 +19,6 @@ const Amount = () => {
       expense += parseInt(transactions[i]?.amount);
     }
   }
-  console.log(total, "total");
-  console.log(parseInt(expense.toString().split("-")[1]), "expense");
 
   return (
     <div>

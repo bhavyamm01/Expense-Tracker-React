@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import AddNewTransaction from "./components/AddNewTransaction/AddNewTransaction";
 import Amount from "./components/Amount/Amount";

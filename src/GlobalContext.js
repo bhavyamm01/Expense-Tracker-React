@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 
 export const GlobalContext = createContext();
 
@@ -15,10 +15,6 @@ export const GlobalProvider = ({ children }) => {
 
     setTransactions([transaction, ...transactions]);
   };
-
-  // useEffect(() => {
-  //   window.localStorage.setItem("transactions", JSON.stringify(transactions));
-  // }, [transactions]);
 
   return (
     <GlobalContext.Provider
