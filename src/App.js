@@ -1,73 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./App.css";
-import AddNewTransaction from "./components/AddNewTransaction/AddNewTransaction";
-import Amount from "./components/Amount/Amount";
-import History from "./components/History/History";
-import { GlobalProvider } from "./GlobalContext";
 
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+// Opens Consent Form
+function getGoogleOAuthURL() {
+  const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
 
-import { useGoogleLogin } from "react-google-login";
-
-import { gapi } from "gapi-script";
-
-function App() {
-  useEffect(() => {
-    function start() {
-      gapi.client.init({
-        clientId:
-          "469592621455-i547q23o1a4ro9l92ipsnanlebp444hu.apps.googleusercontent.com",
-        scope: "",
-      });
-    }
-    gapi.load("client:auth2", start);
-  });
-
-  const responseGoogle = (res) => {
-    console.log(res);
-    console.log(res.profileObj);
-  };
-
-  const onLogoutSuccess = () => {
-    console.log("Log out successful");
-  };
-
-  const { signIn } = useGoogleLogin({
-    onSuccess: responseGoogle,
-    onFailure: responseGoogle,
-    clientId:
+  const options = {
+    redirect_uri: "http://localhost:8080/auth/login",
+    client_id:
       "469592621455-i547q23o1a4ro9l92ipsnanlebp444hu.apps.googleusercontent.com",
-    isSignedIn: true,
-    accessType: "offline",
-  });
+    access_type: "offline",
+    response_type: "code",
+    prompt: "consent",
+    scope: [
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email",
+    ].join(" "),
+  };
+
+  const qs = new URLSearchParams(options);
+
+  return `${rootUrl}?${qs.toString()}`;
+}
+
+const App = () => {
   return (
     <div>
-      {/* <button onClick={signIn}>
-        <span>Sign in with google</span>
-      </button> */}
-
-      <GoogleLogout
-        clientId="469592621455-i547q23o1a4ro9l92ipsnanlebp444hu.apps.googleusercontent.com"
-        buttonText="Logout"
-        onLogoutSuccess={onLogoutSuccess}
-      />
-      <GoogleLogin
-        clientId="469592621455-i547q23o1a4ro9l92ipsnanlebp444hu.apps.googleusercontent.com"
-        buttonText="Login"
-        onSuccess={responseGoogle}
-        onFailure={responseGoogle}
-        cookiePolicy={"single_host_origin"}
-      />
+      <a href={getGoogleOAuthURL()}>Login</a>
     </div>
-    // <GlobalProvider>
-    //   <div className="container">
-    //     <h2>Expense Tracker</h2>
-    //     <Amount />
-    //     <History />
-    //     <AddNewTransaction />
-    //   </div>
-    // </GlobalProvider>
   );
-}
+};
 
 export default App;
