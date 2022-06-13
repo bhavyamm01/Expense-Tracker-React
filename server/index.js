@@ -1,5 +1,5 @@
 import express from "express";
-import { googleOAuthHandler } from "./googleOAuthHandler.js";
+import { googleOAuthHandler2 } from "./googleOAuthHandler2.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   res.send("Hello");
 });
 
-app.get("/api/google", googleOAuthHandler);
+app.get("/auth/login", googleOAuthHandler2);
 
 app.listen(PORT, () => {
   console.log("Server running on ", PORT);
