@@ -8,7 +8,7 @@ export async function getGoogleOAuthTokens({ code }) {
     code,
     client_id:
       "598165447701-2juuugp57c6molr9h65q524f2ggectji.apps.googleusercontent.com",
-    client_secret: "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",
+    client_secret: "<aman_secret_key>",
     redirect_uri: "http://localhost:3000/login/sso",
     grant_type: "authorization_code",
   };
